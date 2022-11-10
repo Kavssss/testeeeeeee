@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/player/walk_1.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 23.5294
+height = 52.9412
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 0.68, 0.68 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.495356, 0.534759 )
+frames = SubResource( 1 )
+animation = "idle"
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 23.5294, 47.0588 )
+scale = Vector2( 1, 0.941176 )
+shape = SubResource( 2 )
+
+[node name="Limit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Limit"]
+position = Vector2( 23.5294, 47.0588 )
+scale = Vector2( 1, 0.941176 )
+shape = SubResource( 2 )

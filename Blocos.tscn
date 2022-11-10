@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/scenario/Tileset.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 8 )
+
+[node name="Blocos" type="Node2D"]
+
+[node name="Bloco" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 0, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Bloco" type="StaticBody2D" parent="Bloco"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bloco/Bloco"]
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Bico" type="Sprite" parent="."]
+position = Vector2( 32, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 96, 0, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Bico" type="StaticBody2D" parent="Bico"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bico/Bico"]
+position = Vector2( 16, 8 )
+shape = SubResource( 2 )
+
+[node name="SpikeUp" type="Sprite" parent="."]
+position = Vector2( 64, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 0, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpikeUp" type="StaticBody2D" parent="SpikeUp"]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpikeUp/SpikeUp"]
+polygon = PoolVector2Array( 0, 32, 16, 0, 32, 32 )
+
+[node name="SpikeDown" type="Sprite" parent="."]
+position = Vector2( 96, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 0, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpikeDown" type="StaticBody2D" parent="SpikeDown"]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpikeDown/SpikeDown"]
+position = Vector2( 32, 32 )
+rotation = 3.14159
+polygon = PoolVector2Array( 0, 32, 16, 0, 32, 32 )
+
+[node name="SpikeRight" type="Sprite" parent="."]
+position = Vector2( 128, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 160, 0, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpikeRight" type="StaticBody2D" parent="SpikeRight"]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpikeRight/SpikeRight"]
+position = Vector2( 32, 0 )
+rotation = 1.5708
+polygon = PoolVector2Array( 0, 32, 16, 0, 32, 32 )
+
+[node name="SpikeLeft" type="Sprite" parent="."]
+position = Vector2( 160, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 224, 0, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpikeLeft" type="StaticBody2D" parent="SpikeLeft"]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpikeLeft/SpikeLeft"]
+position = Vector2( 0, 32 )
+rotation = 4.71239
+polygon = PoolVector2Array( 0, 32, 16, 0, 32, 32 )
